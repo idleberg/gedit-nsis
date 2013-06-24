@@ -27,10 +27,7 @@ Make sure to have working copy of the official [gedit Windows built][3] installe
 
 ## License
 
-All code dual licensed under:
-
-* [The MIT License (MIT)][5]
-* [The GNU Lesser General Public License, version 2.1][6]
+All code dual licensed under [The MIT License (MIT)][5] and [The GNU Lesser General Public License, version 2.1][6]
 
 ## Donate
 
