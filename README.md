@@ -34,9 +34,9 @@ All code dual licensed under:
 
 [<img src="https://raw.github.com/balupton/flattr-buttons/master/badge-89x18.gif" />](https://flattr.com/submit/auto?user_id=idleberg&url=https://github.com/idleberg/gedit-nsis.lang/&title=gedit-nsis.lang&description=Modern%20gedit%20syntax%20highlighter%20for%20NSIS%20scripts&language=en_GB&tags=nsis,gedit,syntax,highlighting,code&hidden=0&category=software)
 
-[1]: https://projects.gnome.org/gedit/
-[2]: https://projects.gnome.org/gedit/
-[3]: https://live.gnome.org/Gedit/Windows
-[4]: https://raw.github.com/idleberg/gedit-nsis.lang/master/nsis.lang
+[1]: http://projects.gnome.org/gedit/
+[2]: http://www.gnome.org/
+[3]: http://live.gnome.org/Gedit/Windows
+[4]: http://raw.github.com/idleberg/gedit-nsis.lang/master/nsis.lang
 [5]: http://opensource.org/licenses/MIT
 [6]: http://opensource.org/licenses/lgpl-license
