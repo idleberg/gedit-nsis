@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+	Author: Jan T. Sott <jan.sott@gmxxl.com>
+
+	This code is dual-licensed under the LGPL and the MIT License
+
+
+	The GNU Lesser General Public License, version 2.1 (LGPL-2.1)
+
+		Copyright (C) 2013 Jan T. Sott
+
+		This library is free software; you can redistribute it and/or modify it under
+		the terms of the GNU Lesser General Public License as published by the Free
+		Software Foundation; either version 2.1 of the License, or (at your option)
+		any later version.
+
+		This library is distributed in the hope that it will be useful, but WITHOUT
+		ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+		FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
+		details.
+
+		You should have received a copy of the GNU Lesser General Public License
+		along with this library; if not, write to the Free Software Foundation, Inc.,
+		59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+
+
+	The MIT License (MIT)
+
+		Copyright (c) 2013 Jan T. Sott
+
+		Permission is hereby granted, free of charge, to any person obtaining a copy
+		of this software and associated documentation files (the "Software"), to deal
+		in the Software without restriction, including without limitation the rights
+		to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+		copies of the Software, and to permit persons to whom the Software is
+		furnished to do so, subject to the following conditions:
+
+		The above copyright notice and this permission notice shall be included in
+		all copies or substantial portions of the Software.
+
+		THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+		IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+		FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+		AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+		LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+		OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+		THE SOFTWARE.
+
+-->
+<language id="nsis" _name="NSIS" version="2.0" _section="Others">
+	<metadata>
+		<property name="globs">*.nsi;*.nsh</property>
+		<property name="line-comment-start">;</property>
+	</metadata>
+
+	<styles>
+		<style id="builtins" _name="Builtin" map-to="def:type"/>
+		<style id="comment" _name="Comment" map-to="def:comment"/>
+		<style id="escape" _name="Escaped Character" map-to="def:special-char"/>
+		<style id="keyword" _name="Keyword" map-to="def:keyword"/>
+		<style id="operator" _name="Operator" map-to="def:operator"/>
+		<style id="string" _name="String" map-to="def:string"/>
+		<style id="symbol" _name="Symbol"  map-to="def:string"/>
+		<style id="variable" _name="Variable" map-to="makefile:variable"/>
+	</styles>
+
+	<definitions>
+
+		<define-regex id="identifier">[\w_][\w\d_]*</define-regex>
+
+		<context id="nsis" class="no-spell-check">
+			<include>
+				<context ref="block-comment"/>
+				<context ref="builtins"/>
+				<context ref="escape"/>
+				<context ref="keywords"/>
+				<context ref="line-comment1"/>
+				<context ref="line-comment2"/>
+				<context ref="operator"/>
+				<context ref="symbol"/>
+				<context ref="variable"/>
+				<context ref="variable-assignment"/>
+			</include>
+		</context>
+
+		<context id="variable" style-ref="variable">
+			<match>\$(\%{identifier}|\{\%{identifier}\}|\(\^\%{identifier}\))</match>
+		</context>
+
+		<context id="variable-assignment">
+			<match>^\s*(!define)\s+(\%{identifier})</match>
+			<include>
+				<context sub-pattern="1" style-ref="operator"/>
+				<context sub-pattern="2" style-ref="variable"/>
+			</include>
+		</context>
+
+		<context id="string" style-ref="string" class="string" class-disabled="no-spell-check">
+			<start>"</start>
+			<end>"</end>
+			<include>
+				<context ref="variable"/>
+			</include>
+		</context>
+
+		<context id="line-comment1" style-ref="comment" end-at-line-end="true" extend-parent="false" class="comment">
+			<start>#</start>
+			<include>
+				<context ref="def:in-line-comment"/>
+			</include>
+		</context>
+
+		<context id="line-comment2" style-ref="comment" end-at-line-end="true" extend-parent="false" class="comment">
+			<start>;</start>
+			<include>
+				<context ref="def:in-line-comment"/>
+			</include>
+		</context>
+
+		<context id="block-comment" style-ref="comment" class="comment">
+			<start>/\*</start>
+			<end>\*/</end>
+			<include>
+				<context ref="def:in-line-comment"/>
+			</include>
+		</context>
+
+		<context id="escape" style-ref="escape">
+			<match>\\((\\|"|n|t|\$|r)|[0-7]{1,3}|x[0-9a-fA-F]{1,2})</match>
+		</context>
+
+
+		<context id="builtins" style-ref="builtins">
+			<prefix>!</prefix>
+			<keyword>addincludedir</keyword>
+			<keyword>addplugindir</keyword>
+			<keyword>appendfile</keyword>
+			<keyword>cd</keyword>
+			<keyword>define</keyword>
+			<keyword>delfile</keyword>
+			<keyword>echo</keyword>
+			<keyword>else</keyword>
+			<keyword>endif</keyword>
+			<keyword>error</keyword>
+			<keyword>execute</keyword>
+			<keyword>finalize</keyword>
+			<keyword>getdllversionsystem</keyword>
+			<keyword>if</keyword>
+			<keyword>ifdef</keyword>
+			<keyword>ifmacrodef</keyword>
+			<keyword>ifmacrondef</keyword>
+			<keyword>ifndef</keyword>
+			<keyword>include</keyword>
+			<keyword>insertmacro</keyword>
+			<keyword>macro</keyword>
+			<keyword>macroend</keyword>
+			<keyword>packhdr</keyword>
+			<keyword>searchparse</keyword>
+			<keyword>searchreplace</keyword>
+			<keyword>tempfile</keyword>
+			<keyword>undef</keyword>
+			<keyword>verbose</keyword>
+			<keyword>warning</keyword>
+		</context>
+
+		<context id="keywords" style-ref="keyword">
+			<keyword>Abort</keyword>
+			<keyword>AddBrandingImage</keyword>
+			<keyword>AddSize</keyword>
+			<keyword>AllowRootDirInstall</keyword>
+			<keyword>AllowSkipFiles</keyword>
+			<keyword>AutoCloseWindow</keyword>
+			<keyword>BGFont</keyword>
+			<keyword>BGGradient</keyword>
+			<keyword>BrandingText</keyword>
+			<keyword>BringToFront</keyword>
+			<keyword>Call</keyword>
+			<keyword>CallInstDLL</keyword>
+			<keyword>Caption</keyword>
+			<keyword>ChangeUI</keyword>
+			<keyword>CheckBitmap</keyword>
+			<keyword>ClearErrors</keyword>
+			<keyword>CompletedText</keyword>
+			<keyword>ComponentText</keyword>
+			<keyword>CopyFiles</keyword>
+			<keyword>CRCCheck</keyword>
+			<keyword>CreateDirectory</keyword>
+			<keyword>CreateFont</keyword>
+			<keyword>CreateShortCut</keyword>
+			<keyword>Delete</keyword>
+			<keyword>DeleteINISec</keyword>
+			<keyword>DeleteINIStr</keyword>
+			<keyword>DeleteRegKey</keyword>
+			<keyword>DeleteRegValue</keyword>
+			<keyword>DetailPrint</keyword>
+			<keyword>DetailsButtonText</keyword>
+			<keyword>DirText</keyword>
+			<keyword>DirVar</keyword>
+			<keyword>DirVerify</keyword>
+			<keyword>EnableWindow</keyword>
+			<keyword>EnumRegKey</keyword>
+			<keyword>EnumRegValue</keyword>
+			<keyword>Exch</keyword>
+			<keyword>Exec</keyword>
+			<keyword>ExecShell</keyword>
+			<keyword>ExecWait</keyword>
+			<keyword>ExpandEnvStrings</keyword>
+			<keyword>File</keyword>
+			<keyword>FileBufSize</keyword>
+			<keyword>FileClose</keyword>
+			<keyword>FileErrorText</keyword>
+			<keyword>FileOpen</keyword>
+			<keyword>FileRead</keyword>
+			<keyword>FileReadByte</keyword>
+			<keyword>FileReadUTF16LE</keyword>
+			<keyword>FileReadWord</keyword>
+			<keyword>FileSeek</keyword>
+			<keyword>FileWrite</keyword>
+			<keyword>FileWriteByte</keyword>
+			<keyword>FileWriteUTF16LE</keyword>
+			<keyword>FileWriteWord</keyword>
+			<keyword>FindClose</keyword>
+			<keyword>FindFirst</keyword>
+			<keyword>FindNext</keyword>
+			<keyword>FindWindow</keyword>
+			<keyword>FlushINI</keyword>
+			<keyword>Function</keyword>
+			<keyword>FunctionEnd</keyword>
+			<keyword>GetCurInstType</keyword>
+			<keyword>GetCurrentAddress</keyword>
+			<keyword>GetDlgItem</keyword>
+			<keyword>GetDLLVersion</keyword>
+			<keyword>GetDLLVersionLocal</keyword>
+			<keyword>GetErrorLevel</keyword>
+			<keyword>GetFileTime</keyword>
+			<keyword>GetFileTimeLocal</keyword>
+			<keyword>GetFullPathName</keyword>
+			<keyword>GetFunctionAddress</keyword>
+			<keyword>GetInstDirError</keyword>
+			<keyword>GetLabelAddress</keyword>
+			<keyword>GetTempFileName</keyword>
+			<keyword>Goto</keyword>
+			<keyword>HideWindow</keyword>
+			<keyword>Icon</keyword>
+			<keyword>IfAbort</keyword>
+			<keyword>IfErrors</keyword>
+			<keyword>IfFileExists</keyword>
+			<keyword>IfRebootFlag</keyword>
+			<keyword>IfSilent</keyword>
+			<keyword>InitPluginsDir</keyword>
+			<keyword>InstallButtonText</keyword>
+			<keyword>InstallColors</keyword>
+			<keyword>InstallDir</keyword>
+			<keyword>InstallDirRegKey</keyword>
+			<keyword>InstProgressFlags</keyword>
+			<keyword>InstType</keyword>
+			<keyword>InstTypeGetText</keyword>
+			<keyword>InstTypeSetText</keyword>
+			<keyword>IntCmp</keyword>
+			<keyword>IntCmpU</keyword>
+			<keyword>IntFmt</keyword>
+			<keyword>IntOp</keyword>
+			<keyword>IsWindow</keyword>
+			<keyword>LangString</keyword>
+			<keyword>LicenseBkColor</keyword>
+			<keyword>LicenseData</keyword>
+			<keyword>LicenseForceSelection</keyword>
+			<keyword>LicenseLangString</keyword>
+			<keyword>LicenseText</keyword>
+			<keyword>LoadLanguageFile</keyword>
+			<keyword>LockWindow</keyword>
+			<keyword>LogSet</keyword>
+			<keyword>LogText</keyword>
+			<keyword>ManifestDPIAware</keyword>
+			<keyword>ManifestSupportedOS</keyword>
+			<keyword>MessageBox</keyword>
+			<keyword>MiscButtonText</keyword>
+			<keyword>Name</keyword>
+			<keyword>Nop</keyword>
+			<keyword>OutFile</keyword>
+			<keyword>Page</keyword>
+			<keyword>PageCallbacks</keyword>
+			<keyword>PageEx</keyword>
+			<keyword>PageExEnd</keyword>
+			<keyword>Pop</keyword>
+			<keyword>Push</keyword>
+			<keyword>Quit</keyword>
+			<keyword>ReadEnvStr</keyword>
+			<keyword>ReadINIStr</keyword>
+			<keyword>ReadRegDWORD</keyword>
+			<keyword>ReadRegStr</keyword>
+			<keyword>Reboot</keyword>
+			<keyword>RegDLL</keyword>
+			<keyword>Rename</keyword>
+			<keyword>RequestExecutionLevel</keyword>
+			<keyword>ReserveFile</keyword>
+			<keyword>Return</keyword>
+			<keyword>RMDir</keyword>
+			<keyword>SearchPath</keyword>
+			<keyword>Section</keyword>
+			<keyword>SectionEnd</keyword>
+			<keyword>SectionGetFlags</keyword>
+			<keyword>SectionGetInstTypes</keyword>
+			<keyword>SectionGetSize</keyword>
+			<keyword>SectionGetText</keyword>
+			<keyword>SectionGroup</keyword>
+			<keyword>SectionGroupEnd</keyword>
+			<keyword>SectionIn</keyword>
+			<keyword>SectionSetFlags</keyword>
+			<keyword>SectionSetInstTypes</keyword>
+			<keyword>SectionSetSize</keyword>
+			<keyword>SectionSetText</keyword>
+			<keyword>SendMessage</keyword>
+			<keyword>SetAutoClose</keyword>
+			<keyword>SetBrandingImage</keyword>
+			<keyword>SetCompress</keyword>
+			<keyword>SetCompressor</keyword>
+			<keyword>SetCompressorDictSize</keyword>
+			<keyword>SetCtlColors</keyword>
+			<keyword>SetCurInstType</keyword>
+			<keyword>SetDatablockOptimize</keyword>
+			<keyword>SetDateSave</keyword>
+			<keyword>SetDetailsPrint</keyword>
+			<keyword>SetDetailsView</keyword>
+			<keyword>SetErrorLevel</keyword>
+			<keyword>SetErrors</keyword>
+			<keyword>SetFileAttributes</keyword>
+			<keyword>SetFont</keyword>
+			<keyword>SetOutPath</keyword>
+			<keyword>SetOverwrite</keyword>
+			<keyword>SetPluginUnload</keyword>
+			<keyword>SetRebootFlag</keyword>
+			<keyword>SetRegView</keyword>
+			<keyword>SetShellVarContext</keyword>
+			<keyword>SetSilent</keyword>
+			<keyword>ShowInstDetails</keyword>
+			<keyword>ShowUninstDetails</keyword>
+			<keyword>ShowWindow</keyword>
+			<keyword>SilentInstall</keyword>
+			<keyword>SilentUnInstall</keyword>
+			<keyword>Sleep</keyword>
+			<keyword>SpaceTexts</keyword>
+			<keyword>StrCmp</keyword>
+			<keyword>StrCmpS</keyword>
+			<keyword>StrCpy</keyword>
+			<keyword>StrLen</keyword>
+			<keyword>SubCaption</keyword>
+			<keyword>SubSection</keyword>
+			<keyword>SubSectionEnd</keyword>
+			<keyword>Unicode</keyword>
+			<keyword>UninstallButtonText</keyword>
+			<keyword>UninstallCaption</keyword>
+			<keyword>UninstallIcon</keyword>
+			<keyword>UninstallSubCaption</keyword>
+			<keyword>UninstallText</keyword>
+			<keyword>UninstPage</keyword>
+			<keyword>UnRegDLL</keyword>
+			<keyword>Var</keyword>
+			<keyword>VIAddVersionKey</keyword>
+			<keyword>VIFileVersion</keyword>
+			<keyword>VIProductVersion</keyword>
+			<keyword>WindowIcon</keyword>
+			<keyword>WriteINIStr</keyword>
+			<keyword>WriteRegBin</keyword>
+			<keyword>WriteRegDWORD</keyword>
+			<keyword>WriteRegExpandStr</keyword>
+			<keyword>WriteRegStr</keyword>
+			<keyword>WriteUninstaller</keyword>
+			<keyword>XPStyle</keyword>
+		</context>
+
+		<context id="operator" style-ref="operator">
+			<keyword>admin</keyword>
+			<keyword>all</keyword>
+			<keyword>auto</keyword>
+			<keyword>both</keyword>
+			<keyword>colored</keyword>
+			<keyword>false</keyword>
+			<keyword>force</keyword>
+			<keyword>hide</keyword>
+			<keyword>highest</keyword>
+			<keyword>lastused</keyword>
+			<keyword>leave</keyword>
+			<keyword>listonly</keyword>
+			<keyword>none</keyword>
+			<keyword>normal</keyword>
+			<keyword>notset</keyword>
+			<keyword>off</keyword>
+			<keyword>on</keyword>
+			<keyword>open</keyword>
+			<keyword>print</keyword>
+			<keyword>show</keyword>
+			<keyword>silent</keyword>
+			<keyword>silentlog</keyword>
+			<keyword>smooth</keyword>
+			<keyword>textonly</keyword>
+			<keyword>true</keyword>
+			<keyword>user</keyword>
+		</context>
+
+		<context id="symbol" style-ref="symbol">
+			<keyword>ARCHIVE</keyword>
+			<keyword>FILE_ATTRIBUTE_ARCHIVE</keyword>
+			<keyword>FILE_ATTRIBUTE_NORMAL</keyword>
+			<keyword>FILE_ATTRIBUTE_OFFLINE</keyword>
+			<keyword>FILE_ATTRIBUTE_READONLY</keyword>
+			<keyword>FILE_ATTRIBUTE_SYSTEM</keyword>
+			<keyword>FILE_ATTRIBUTE_TEMPORARY</keyword>
+			<keyword>HKCR</keyword>
+			<keyword>HKCU</keyword>
+			<keyword>HKDD</keyword>
+			<keyword>HKEY_CLASSES_ROOT</keyword>
+			<keyword>HKEY_CURRENT_CONFIG</keyword>
+			<keyword>HKEY_CURRENT_USER</keyword>
+			<keyword>HKEY_DYN_DATA</keyword>
+			<keyword>HKEY_LOCAL_MACHINE</keyword>
+			<keyword>HKEY_PERFORMANCE_DATA</keyword>
+			<keyword>HKEY_USERS</keyword>
+			<keyword>HKLM</keyword>
+			<keyword>HKPD</keyword>
+			<keyword>HKU</keyword>
+			<keyword>IDABORT</keyword>
+			<keyword>IDCANCEL</keyword>
+			<keyword>IDIGNORE</keyword>
+			<keyword>IDNO</keyword>
+			<keyword>IDOK</keyword>
+			<keyword>IDRETRY</keyword>
+			<keyword>IDYES</keyword>
+			<keyword>MB_ABORTRETRYIGNORE</keyword>
+			<keyword>MB_DEFBUTTON1</keyword>
+			<keyword>MB_DEFBUTTON2</keyword>
+			<keyword>MB_DEFBUTTON3</keyword>
+			<keyword>MB_DEFBUTTON4</keyword>
+			<keyword>MB_ICONEXCLAMATION</keyword>
+			<keyword>MB_ICONINFORMATION</keyword>
+			<keyword>MB_ICONQUESTION</keyword>
+			<keyword>MB_ICONSTOP</keyword>
+			<keyword>MB_OK</keyword>
+			<keyword>MB_OKCANCEL</keyword>
+			<keyword>MB_RETRYCANCEL</keyword>
+			<keyword>MB_RIGHT</keyword>
+			<keyword>MB_RTLREADING</keyword>
+			<keyword>MB_SETFOREGROUND</keyword>
+			<keyword>MB_TOPMOST</keyword>
+			<keyword>MB_USERICON</keyword>
+			<keyword>MB_YESNO</keyword>
+			<keyword>NORMAL</keyword>
+			<keyword>OFFLINE</keyword>
+			<keyword>READONLY</keyword>
+			<keyword>SHCTX</keyword>
+			<keyword>SHELL_CONTEXT</keyword>
+			<keyword>SYSTEM</keyword>
+			<keyword>TEMPORARY</keyword>
+		</context>
+
+	</definitions>
+</language>
