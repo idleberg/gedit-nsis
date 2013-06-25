@@ -60,6 +60,7 @@
 		<style id="escape" _name="Escaped Character" map-to="def:special-char"/>
 		<style id="keyword" _name="Keyword" map-to="def:keyword"/>
 		<style id="operator" _name="Operator" map-to="def:operator"/>
+		<style id="plugin" _name="Plugin" map-to="def:keyword"/>
 		<style id="string" _name="String" map-to="def:string"/>
 		<style id="symbol" _name="Symbol"  map-to="def:string"/>
 		<style id="variable" _name="Variable" map-to="makefile:variable"/>
@@ -71,13 +72,17 @@
 
 		<context id="nsis" class="no-spell-check">
 			<include>
+				<context ref="backtick-quoted-string"/>
 				<context ref="block-comment"/>
 				<context ref="builtins"/>
+				<context ref="double-quoted-string"/>
 				<context ref="escape"/>
 				<context ref="keywords"/>
 				<context ref="line-comment1"/>
 				<context ref="line-comment2"/>
 				<context ref="operator"/>
+				<context ref="plugin"/>
+				<context ref="single-quoted-string"/>
 				<context ref="symbol"/>
 				<context ref="variable"/>
 				<context ref="variable-assignment"/>
@@ -96,11 +101,34 @@
 			</include>
 		</context>
 
-		<context id="string" style-ref="string" class="string" class-disabled="no-spell-check">
+		<context id="double-quoted-string" style-ref="string" class="string" class-disabled="no-spell-check">
 			<start>"</start>
 			<end>"</end>
 			<include>
+				<context ref="escape"/>
 				<context ref="variable"/>
+				<context ref="def:line-continue"/>
+			</include>
+		</context>
+
+		<context id="single-quoted-string" style-ref="string" class="string" class-disabled="no-spell-check">
+			<start>'</start>
+			<end>'</end>
+			<include>
+				<context style-ref="escape">
+					<match>\\['\\]</match>
+				</context>
+				<context ref="variable"/>
+			</include>
+		</context>
+
+		<context id="backtick-quoted-string" style-ref="string">
+			<start>`</start>
+			<end>`</end>
+			<include>
+				<context ref="escape"/>
+				<context ref="variable"/>
+				<context ref="def:line-continue"/>
 			</include>
 		</context>
 
@@ -127,9 +155,8 @@
 		</context>
 
 		<context id="escape" style-ref="escape">
-			<match>\\((\\|"|n|t|\$|r)|[0-7]{1,3}|x[0-9a-fA-F]{1,2})</match>
+			<match>\$\\("|n|t|\$|r)</match>
 		</context>
-
 
 		<context id="builtins" style-ref="builtins">
 			<prefix>!</prefix>
@@ -452,6 +479,57 @@
 			<keyword>SHELL_CONTEXT</keyword>
 			<keyword>SYSTEM</keyword>
 			<keyword>TEMPORARY</keyword>
+		</context>
+
+		<context id="plugin" style-ref="keyword">
+			<keyword>AdvSplash::show</keyword>
+			<keyword>Banner::destroy</keyword>
+			<keyword>Banner::getWindow</keyword>
+			<keyword>Banner::show</keyword>
+			<keyword>BgImage::AddImage</keyword>
+			<keyword>BgImage::AddText</keyword>
+			<keyword>BgImage::Clear</keyword>
+			<keyword>BgImage::Destroy</keyword>
+			<keyword>BgImage::Redraw</keyword>
+			<keyword>BgImage::SetBg</keyword>
+			<keyword>BgImage::SetReturn</keyword>
+			<keyword>BgImage::Sound</keyword>
+			<keyword>Dialer::AttemptConnect</keyword>
+			<keyword>Dialer::AutodialHangup</keyword>
+			<keyword>Dialer::AutodialOnline</keyword>
+			<keyword>Dialer::AutodialUnattended</keyword>
+			<keyword>Dialer::GetConnectedState</keyword>
+			<keyword>LangDLL::LangDialog</keyword>
+			<keyword>Math::Script</keyword>
+			<keyword>nsDialogs::Create</keyword>
+			<keyword>nsDialogs::CreateControl</keyword>
+			<keyword>nsDialogs::GetUserData</keyword>
+			<keyword>nsDialogs::KillTimer</keyword>
+			<keyword>nsDialogs::OnBack</keyword>
+			<keyword>nsDialogs::OnChange</keyword>
+			<keyword>nsDialogs::OnClick</keyword>
+			<keyword>nsDialogs::OnNotify</keyword>
+			<keyword>nsDialogs::SelectFileDialog</keyword>
+			<keyword>nsDialogs::SelectFolderDialog</keyword>
+			<keyword>nsDialogs::SetRTL</keyword>
+			<keyword>nsDialogs::SetUserData</keyword>
+			<keyword>nsDialogs::Show</keyword>
+			<keyword>nsExec::Exec</keyword>
+			<keyword>nsExec::ExecToLog</keyword>
+			<keyword>nsExec::ExecToStack</keyword>
+			<keyword>NSISdl::download</keyword>
+			<keyword>Splash::show</keyword>
+			<keyword>StartMenu::Init</keyword>
+			<keyword>StartMenu::Select</keyword>
+			<keyword>System::Alloc</keyword>
+			<keyword>System::Call</keyword>
+			<keyword>System::Copy</keyword>
+			<keyword>System::Free</keyword>
+			<keyword>System::Get</keyword>
+			<keyword>UserInfo::GetAccountType</keyword>
+			<keyword>UserInfo::GetName</keyword>
+			<keyword>UserInfo::GetOriginalAccountType</keyword>
+			<keyword>Uvpatch::vpatchfile</keyword>
 		</context>
 
 	</definitions>
