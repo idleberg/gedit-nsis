@@ -62,7 +62,7 @@
 		<style id="operator" _name="Operator" map-to="def:operator"/>
 		<style id="plugin" _name="Plugin" map-to="def:keyword"/>
 		<style id="string" _name="String" map-to="def:string"/>
-		<style id="symbol" _name="Symbol"  map-to="def:string"/>
+		<style id="symbol" _name="Symbol"  map-to="def:operator"/>
 		<style id="variable" _name="Variable" map-to="makefile:variable"/>
 	</styles>
 
@@ -482,54 +482,7 @@
 		</context>
 
 		<context id="plugin" style-ref="keyword">
-			<keyword>AdvSplash::show</keyword>
-			<keyword>Banner::destroy</keyword>
-			<keyword>Banner::getWindow</keyword>
-			<keyword>Banner::show</keyword>
-			<keyword>BgImage::AddImage</keyword>
-			<keyword>BgImage::AddText</keyword>
-			<keyword>BgImage::Clear</keyword>
-			<keyword>BgImage::Destroy</keyword>
-			<keyword>BgImage::Redraw</keyword>
-			<keyword>BgImage::SetBg</keyword>
-			<keyword>BgImage::SetReturn</keyword>
-			<keyword>BgImage::Sound</keyword>
-			<keyword>Dialer::AttemptConnect</keyword>
-			<keyword>Dialer::AutodialHangup</keyword>
-			<keyword>Dialer::AutodialOnline</keyword>
-			<keyword>Dialer::AutodialUnattended</keyword>
-			<keyword>Dialer::GetConnectedState</keyword>
-			<keyword>LangDLL::LangDialog</keyword>
-			<keyword>Math::Script</keyword>
-			<keyword>nsDialogs::Create</keyword>
-			<keyword>nsDialogs::CreateControl</keyword>
-			<keyword>nsDialogs::GetUserData</keyword>
-			<keyword>nsDialogs::KillTimer</keyword>
-			<keyword>nsDialogs::OnBack</keyword>
-			<keyword>nsDialogs::OnChange</keyword>
-			<keyword>nsDialogs::OnClick</keyword>
-			<keyword>nsDialogs::OnNotify</keyword>
-			<keyword>nsDialogs::SelectFileDialog</keyword>
-			<keyword>nsDialogs::SelectFolderDialog</keyword>
-			<keyword>nsDialogs::SetRTL</keyword>
-			<keyword>nsDialogs::SetUserData</keyword>
-			<keyword>nsDialogs::Show</keyword>
-			<keyword>nsExec::Exec</keyword>
-			<keyword>nsExec::ExecToLog</keyword>
-			<keyword>nsExec::ExecToStack</keyword>
-			<keyword>NSISdl::download</keyword>
-			<keyword>Splash::show</keyword>
-			<keyword>StartMenu::Init</keyword>
-			<keyword>StartMenu::Select</keyword>
-			<keyword>System::Alloc</keyword>
-			<keyword>System::Call</keyword>
-			<keyword>System::Copy</keyword>
-			<keyword>System::Free</keyword>
-			<keyword>System::Get</keyword>
-			<keyword>UserInfo::GetAccountType</keyword>
-			<keyword>UserInfo::GetName</keyword>
-			<keyword>UserInfo::GetOriginalAccountType</keyword>
-			<keyword>Uvpatch::vpatchfile</keyword>
+			<match>\b(([A-Za-z0-9_]+)::([A-Za-z0-9_]+))\b</match>
 		</context>
 
 	</definitions>
