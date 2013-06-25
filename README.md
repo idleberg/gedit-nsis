@@ -6,7 +6,7 @@ This new language file adds support for all NSIS commands up to v3.0a and will b
 
 ## Installation
 
-__Note__: change version to 3.0 if using Gnome 3
+__Note__: change *gtksourceview* version to 3.0 if using Gnome 3
 
 ### Windows
 
