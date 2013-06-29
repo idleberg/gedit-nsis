@@ -13,17 +13,17 @@ __Note__: change *gtksourceview* version to 3.0 if using Gnome 3
 Make sure to have working copy of the official [gedit Windows built][3] installed
 
 1. Download [`nsis.lang`][4]
-2. Copy the file to *%PROGRAMFILES%\gedit\share\gtksourceview-2.0\language-specs*
+2. Copy the file to `%PROGRAMFILES%\gedit\share\gtksourceview-2.0\language-specs`
 
 ### Linux
 
 1. Download [`nsis.lang`][4]
-2. Copy the file to */usr/share/gtksourceview-2.0/language-specs*
+2. Copy the file to `/usr/share/gtksourceview-2.0/language-specs`
 
 ### Mac OS X (MacPorts)
 
 1. Download [`nsis.lang`][4]
-2. Copy the file to */opt/local/share/gtksourceview-2.0/language-specs*
+2. Copy the file to `/opt/local/share/gtksourceview-2.0/language-specs`
 
 ## License
 
