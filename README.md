@@ -2,7 +2,7 @@
 
 [gedit][1] is the official text editor of the [GNOME][2] desktop environment. By default it only comes the most basic syntax highlighter for NSIS scripts.
 
-This new language file adds support for all NSIS commands up to v3.0b1 and will be maintained along NSIS development.
+This new language file adds support for all NSIS commands up to v3.02 and will be maintained along NSIS development.
 
 ## Installation
 
