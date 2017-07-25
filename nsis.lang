@@ -183,6 +183,7 @@
 			<keyword>macro</keyword>
 			<keyword>macroend</keyword>
 			<keyword>packhdr</keyword>
+			<keyword>pragma</keyword>
 			<keyword>searchparse</keyword>
 			<keyword>searchreplace</keyword>
 			<keyword>tempfile</keyword>
@@ -231,6 +232,7 @@
 			<keyword>Exch</keyword>
 			<keyword>Exec</keyword>
 			<keyword>ExecShell</keyword>
+			<keyword>ExecShellWait</keyword>
 			<keyword>ExecWait</keyword>
 			<keyword>ExpandEnvStrings</keyword>
 			<keyword>File</keyword>
@@ -392,6 +394,8 @@
 			<keyword>WriteRegBin</keyword>
 			<keyword>WriteRegDWORD</keyword>
 			<keyword>WriteRegExpandStr</keyword>
+			<keyword>WriteRegMultiStr</keyword>
+			<keyword>WriteRegNone</keyword>
 			<keyword>WriteRegStr</keyword>
 			<keyword>WriteUninstaller</keyword>
 			<keyword>XPStyle</keyword>
@@ -435,7 +439,11 @@
 			<keyword>FILE_ATTRIBUTE_SYSTEM</keyword>
 			<keyword>FILE_ATTRIBUTE_TEMPORARY</keyword>
 			<keyword>HKCR</keyword>
+			<keyword>HKCR32</keyword>
+			<keyword>HKCR64</keyword>
 			<keyword>HKCU</keyword>
+			<keyword>HKCU32</keyword>
+			<keyword>HKCU64</keyword>
 			<keyword>HKDD</keyword>
 			<keyword>HKEY_CLASSES_ROOT</keyword>
 			<keyword>HKEY_CURRENT_CONFIG</keyword>
@@ -445,6 +453,8 @@
 			<keyword>HKEY_PERFORMANCE_DATA</keyword>
 			<keyword>HKEY_USERS</keyword>
 			<keyword>HKLM</keyword>
+			<keyword>HKLM32</keyword>
+			<keyword>HKLM64</keyword>
 			<keyword>HKPD</keyword>
 			<keyword>HKU</keyword>
 			<keyword>IDABORT</keyword>
