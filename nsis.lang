@@ -182,6 +182,7 @@
 			<keyword>insertmacro</keyword>
 			<keyword>macro</keyword>
 			<keyword>macroend</keyword>
+			<keyword>makensis</keyword>
 			<keyword>packhdr</keyword>
 			<keyword>pragma</keyword>
 			<keyword>searchparse</keyword>
