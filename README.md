@@ -16,7 +16,7 @@ __Note__: change *gtksourceview* version to 3.0 if using Gnome 3
 
 ### Windows
 
-Make sure to have working copy of the official [gedit Windows built][3] installed
+Make sure to have working copy of the official [gedit Windows build][3] installed
 
 1. Download [`nsis.lang`][4]
 2. Copy the file to `%PROGRAMFILES%\gedit\share\gtksourceview-2.0\language-specs`
@@ -37,4 +37,12 @@ All code is dual-licensed under [The MIT License (MIT)][5] and [The GNU Lesser G
 
 ## Donate
 
-You are welcome support this project using [Flattr](https://flattr.com/submit/auto?user_id=idleberg&url=https://github.com/idleberg/gedit-nsis.lang) or Bitcoin `17CXJuPsmhuTzFV2k4RKYwpEHVjskJktRd`
+You are welcome support this project using [Flattr][7] or Bitcoin `17CXJuPsmhuTzFV2k4RKYwpEHVjskJktRd`
+
+[1]: http://projects.gnome.org/gedit/
+[2]: http://www.gnome.org/
+[3]: http://live.gnome.org/Gedit/Windows
+[4]: http://raw.github.com/idleberg/gedit-nsis.lang/master/nsis.lang
+[5]: http://opensource.org/licenses/MIT
+[6]: http://opensource.org/licenses/lgpl-license
+[7]: https://flattr.com/submit/auto?user_id=idleberg&url=https://github.com/idleberg/gedit-nsis.lang

@@ -1,13 +1,13 @@
 {
   "name": "gedit-nsis.lang",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "Jan T. Sott",
   "repositoy": "https://github.com/idleberg/gedit-nsis.lang",
   "license": "MIT",
   "private": true,
   "devDependencies": {
     "gulp": "github:gulpjs/gulp#4.0",
-    "gulp-debug": "^2.1.2",
+    "gulp-debug": "^3.1.0",
     "gulp-xml-validator": "^0.1.1"
   },
   "scripts": {
