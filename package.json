@@ -2,7 +2,7 @@
   "name": "gedit-nsis",
   "version": "0.1.2",
   "author": "Jan T. Sott",
-  "repositoy": "https://github.com/idleberg/gedit-nsis.lang",
+  "repositoy": "https://github.com/idleberg/gedit-nsis",
   "license": "MIT",
   "private": true,
   "devDependencies": {
