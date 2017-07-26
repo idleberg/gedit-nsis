@@ -1,10 +1,10 @@
-# gedit-nsis.lang
+# gedit-nsis
 
 [![The MIT License](https://img.shields.io/badge/license-MIT-orange.svg?style=flat-square)](http://opensource.org/licenses/MIT)
 [![GNU General Public License](https://img.shields.io/badge/license-GPL%20v2-orange.svg?style=flat-square)](http://www.gnu.org/licenses/gpl-2.0.html)
-[![GitHub](https://img.shields.io/github/release/idleberg/gedit-nsis.lang.svg?style=flat-square)](https://github.com/idleberg/gedit-nsis.lang/releases)
-[![Travis](https://img.shields.io/travis/idleberg/gedit-nsis.lang.svg?style=flat-square)](https://travis-ci.org/idleberg/gedit-nsis.lang)
-[![David](https://img.shields.io/david/dev/idleberg/gedit-nsis.lang.svg?style=flat-square)](https://david-dm.org/idleberg/gedit-nsis.lang?type=dev)
+[![GitHub](https://img.shields.io/github/release/idleberg/gedit-nsis.svg?style=flat-square)](https://github.com/idleberg/gedit-nsis/releases)
+[![Travis](https://img.shields.io/travis/idleberg/gedit-nsis.svg?style=flat-square)](https://travis-ci.org/idleberg/gedit-nsis)
+[![David](https://img.shields.io/david/dev/idleberg/gedit-nsis.svg?style=flat-square)](https://david-dm.org/idleberg/gedit-nsis?type=dev)
 
 [gedit][1] is the official text editor of the [GNOME][2] desktop environment. By default it only comes the most basic syntax highlighter for NSIS scripts.
 
@@ -42,7 +42,7 @@ You are welcome support this project using [Flattr][7] or Bitcoin `17CXJuPsmhuTz
 [1]: http://projects.gnome.org/gedit/
 [2]: http://www.gnome.org/
 [3]: http://live.gnome.org/Gedit/Windows
-[4]: http://raw.github.com/idleberg/gedit-nsis.lang/master/nsis.lang
+[4]: http://raw.github.com/idleberg/gedit-nsis/master/nsis.lang
 [5]: http://opensource.org/licenses/MIT
 [6]: http://opensource.org/licenses/lgpl-license
-[7]: https://flattr.com/submit/auto?user_id=idleberg&url=https://github.com/idleberg/gedit-nsis.lang
+[7]: https://flattr.com/submit/auto?user_id=idleberg&url=https://github.com/idleberg/gedit-nsis
