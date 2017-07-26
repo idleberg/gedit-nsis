@@ -1,56 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
+	Copyright (c) 2013-2017 Jan T. Sott
 
-	Author: Jan T. Sott <jan.sott@gmxxl.com>
+	This code is dual-licensed under the The MIT License and
+	The GNU Lesser General Public License, version 2.1
 
-	This code is dual-licensed under the LGPL and the MIT License
-
-
-	The GNU Lesser General Public License, version 2.1 (LGPL-2.1)
-
-		Copyright (C) 2013 Jan T. Sott
-
-		This library is free software; you can redistribute it and/or modify it under
-		the terms of the GNU Lesser General Public License as published by the Free
-		Software Foundation; either version 2.1 of the License, or (at your option)
-		any later version.
-
-		This library is distributed in the hope that it will be useful, but WITHOUT
-		ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
-		FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
-		details.
-
-		You should have received a copy of the GNU Lesser General Public License
-		along with this library; if not, write to the Free Software Foundation, Inc.,
-		59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
-
-
-	The MIT License (MIT)
-
-		Copyright (c) 2013 Jan T. Sott
-
-		Permission is hereby granted, free of charge, to any person obtaining a copy
-		of this software and associated documentation files (the "Software"), to deal
-		in the Software without restriction, including without limitation the rights
-		to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-		copies of the Software, and to permit persons to whom the Software is
-		furnished to do so, subject to the following conditions:
-
-		The above copyright notice and this permission notice shall be included in
-		all copies or substantial portions of the Software.
-
-		THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-		IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-		FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-		AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-		LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-		OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-		THE SOFTWARE.
-
+	https://github.com/idleberg/gedit-nsis.lang
 -->
 <language id="nsis" _name="NSIS" version="2.0" _section="Others">
 	<metadata>
-		<property name="globs">*.nsi;*.nsh</property>
+		<property name="globs">*.nsi;*.nsh;*.bnsi;*.bnsh;*:nsdinc</property>
 		<property name="line-comment-start">;</property>
 	</metadata>
 
@@ -67,7 +26,6 @@
 	</styles>
 
 	<definitions>
-
 		<define-regex id="identifier">[\w_][\w\d_]*</define-regex>
 
 		<context id="nsis" class="no-spell-check">
@@ -172,7 +130,7 @@
 			<keyword>error</keyword>
 			<keyword>execute</keyword>
 			<keyword>finalize</keyword>
-			<keyword>getdllversionsystem</keyword>
+			<keyword>getdllversion</keyword>
 			<keyword>if</keyword>
 			<keyword>ifdef</keyword>
 			<keyword>ifmacrodef</keyword>
@@ -187,6 +145,7 @@
 			<keyword>pragma</keyword>
 			<keyword>searchparse</keyword>
 			<keyword>searchreplace</keyword>
+			<keyword>system</keyword>
 			<keyword>tempfile</keyword>
 			<keyword>undef</keyword>
 			<keyword>verbose</keyword>
@@ -359,7 +318,6 @@
 			<keyword>SetFont</keyword>
 			<keyword>SetOutPath</keyword>
 			<keyword>SetOverwrite</keyword>
-			<keyword>SetPluginUnload</keyword>
 			<keyword>SetRebootFlag</keyword>
 			<keyword>SetRegView</keyword>
 			<keyword>SetShellVarContext</keyword>
@@ -376,8 +334,6 @@
 			<keyword>StrCpy</keyword>
 			<keyword>StrLen</keyword>
 			<keyword>SubCaption</keyword>
-			<keyword>SubSection</keyword>
-			<keyword>SubSectionEnd</keyword>
 			<keyword>Unicode</keyword>
 			<keyword>UninstallButtonText</keyword>
 			<keyword>UninstallCaption</keyword>
@@ -407,38 +363,64 @@
 			<keyword>all</keyword>
 			<keyword>auto</keyword>
 			<keyword>both</keyword>
-			<keyword>colored</keyword>
+			<keyword>bottom</keyword>
+			<keyword>bzip2</keyword>
+			<keyword>components</keyword>
+			<keyword>components</keyword>
+			<keyword>current</keyword>
+			<keyword>custom</keyword>
+			<keyword>custom</keyword>
+			<keyword>directory</keyword>
+			<keyword>directory</keyword>
 			<keyword>false</keyword>
 			<keyword>force</keyword>
 			<keyword>hide</keyword>
 			<keyword>highest</keyword>
+			<keyword>ifdiff</keyword>
+			<keyword>ifnewer</keyword>
+			<keyword>instfiles</keyword>
+			<keyword>instfiles</keyword>
 			<keyword>lastused</keyword>
 			<keyword>leave</keyword>
+			<keyword>left</keyword>
+			<keyword>license</keyword>
+			<keyword>license</keyword>
 			<keyword>listonly</keyword>
+			<keyword>lzma</keyword>
+			<keyword>nevershow</keyword>
 			<keyword>none</keyword>
 			<keyword>normal</keyword>
 			<keyword>notset</keyword>
 			<keyword>off</keyword>
 			<keyword>on</keyword>
-			<keyword>open</keyword>
-			<keyword>print</keyword>
+			<keyword>right</keyword>
 			<keyword>show</keyword>
 			<keyword>silent</keyword>
 			<keyword>silentlog</keyword>
-			<keyword>smooth</keyword>
 			<keyword>textonly</keyword>
+			<keyword>top</keyword>
 			<keyword>true</keyword>
+			<keyword>try</keyword>
+			<keyword>uninstConfirm</keyword>
 			<keyword>user</keyword>
+			<keyword>Win10</keyword>
+			<keyword>Win7</keyword>
+			<keyword>Win8</keyword>
+			<keyword>WinVista</keyword>
+			<keyword>zlib</keyword>
 		</context>
 
 		<context id="symbol" style-ref="symbol">
 			<keyword>ARCHIVE</keyword>
 			<keyword>FILE_ATTRIBUTE_ARCHIVE</keyword>
+			<keyword>FILE_ATTRIBUTE_HIDDEN</keyword>
 			<keyword>FILE_ATTRIBUTE_NORMAL</keyword>
 			<keyword>FILE_ATTRIBUTE_OFFLINE</keyword>
 			<keyword>FILE_ATTRIBUTE_READONLY</keyword>
 			<keyword>FILE_ATTRIBUTE_SYSTEM</keyword>
 			<keyword>FILE_ATTRIBUTE_TEMPORARY</keyword>
+			<keyword>HIDDEN</keyword>
+			<keyword>HKCC</keyword>
 			<keyword>HKCR</keyword>
 			<keyword>HKCR32</keyword>
 			<keyword>HKCR64</keyword>
@@ -460,6 +442,13 @@
 			<keyword>HKU</keyword>
 			<keyword>IDABORT</keyword>
 			<keyword>IDCANCEL</keyword>
+			<keyword>IDD_DIR</keyword>
+			<keyword>IDD_INST</keyword>
+			<keyword>IDD_INSTFILES</keyword>
+			<keyword>IDD_LICENSE</keyword>
+			<keyword>IDD_SELCOM</keyword>
+			<keyword>IDD_UNINST</keyword>
+			<keyword>IDD_VERIFY</keyword>
 			<keyword>IDIGNORE</keyword>
 			<keyword>IDNO</keyword>
 			<keyword>IDOK</keyword>
@@ -483,11 +472,17 @@
 			<keyword>MB_TOPMOST</keyword>
 			<keyword>MB_USERICON</keyword>
 			<keyword>MB_YESNO</keyword>
+			<keyword>MB_YESNOCANCEL</keyword>
 			<keyword>NORMAL</keyword>
 			<keyword>OFFLINE</keyword>
 			<keyword>READONLY</keyword>
 			<keyword>SHCTX</keyword>
 			<keyword>SHELL_CONTEXT</keyword>
+			<keyword>SW_HIDE</keyword>
+			<keyword>SW_SHOWDEFAULT</keyword>
+			<keyword>SW_SHOWMAXIMIZED</keyword>
+			<keyword>SW_SHOWMINIMIZED</keyword>
+			<keyword>SW_SHOWNORMAL</keyword>
 			<keyword>SYSTEM</keyword>
 			<keyword>TEMPORARY</keyword>
 		</context>
@@ -495,6 +490,5 @@
 		<context id="plugin" style-ref="keyword">
 			<match>\b(([A-Za-z0-9_]+)::([A-Za-z0-9_]+))\b</match>
 		</context>
-
 	</definitions>
 </language>
