@@ -131,6 +131,7 @@
 			<keyword>execute</keyword>
 			<keyword>finalize</keyword>
 			<keyword>getdllversion</keyword>
+			<keyword>gettlbversion</keyword>
 			<keyword>if</keyword>
 			<keyword>ifdef</keyword>
 			<keyword>ifmacrodef</keyword>
@@ -246,10 +247,16 @@
 			<keyword>InstType</keyword>
 			<keyword>InstTypeGetText</keyword>
 			<keyword>InstTypeSetText</keyword>
+			<keyword>Int64Cmp</keyword>
+			<keyword>Int64CmpU</keyword>
+			<keyword>Int64Fmt</keyword>
 			<keyword>IntCmp</keyword>
 			<keyword>IntCmpU</keyword>
 			<keyword>IntFmt</keyword>
 			<keyword>IntOp</keyword>
+			<keyword>IntPtrCmp</keyword>
+			<keyword>IntPtrCmpU</keyword>
+			<keyword>IntPtrOp</keyword>
 			<keyword>IsWindow</keyword>
 			<keyword>LangString</keyword>
 			<keyword>LicenseBkColor</keyword>
