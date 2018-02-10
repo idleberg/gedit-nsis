@@ -9,7 +9,7 @@ var xmlFiles = [
 ];
 
 // Validate XML
-gulp.task('lint:xml', gulp.series( (done) => { 
+gulp.task('lint:xml', gulp.series( (done) => {
   gulp.src(xmlFiles)
     .pipe(debug({title: 'xml-validator'}))
     .pipe(xmlVal());
