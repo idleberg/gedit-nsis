@@ -279,6 +279,8 @@
 			<keyword>PageCallbacks</keyword>
 			<keyword>PageEx</keyword>
 			<keyword>PageExEnd</keyword>
+			<keyword>PEDllCharacteristics</keyword>
+			<keyword>PESubsysVer</keyword>
 			<keyword>Pop</keyword>
 			<keyword>Push</keyword>
 			<keyword>Quit</keyword>
