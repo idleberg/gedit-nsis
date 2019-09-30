@@ -37,7 +37,7 @@ All code is dual-licensed under [The MIT License (MIT)][5] and [The GNU Lesser G
 
 ## Donate
 
-You are welcome support this project using [Flattr][7] or Bitcoin `17CXJuPsmhuTzFV2k4RKYwpEHVjskJktRd`
+You are welcome to support this project using [Flattr][7] or Bitcoin `17CXJuPsmhuTzFV2k4RKYwpEHVjskJktRd`
 
 [1]: http://projects.gnome.org/gedit/
 [2]: http://www.gnome.org/

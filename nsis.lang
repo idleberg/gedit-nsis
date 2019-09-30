@@ -205,18 +205,16 @@
 			<keyword>FileReadByte</keyword>
 			<keyword>FileReadUTF16LE</keyword>
 			<keyword>FileReadWord</keyword>
+			<keyword>FileWriteUTF16LE</keyword>
 			<keyword>FileSeek</keyword>
 			<keyword>FileWrite</keyword>
 			<keyword>FileWriteByte</keyword>
-			<keyword>FileWriteUTF16LE</keyword>
 			<keyword>FileWriteWord</keyword>
 			<keyword>FindClose</keyword>
 			<keyword>FindFirst</keyword>
 			<keyword>FindNext</keyword>
 			<keyword>FindWindow</keyword>
 			<keyword>FlushINI</keyword>
-			<keyword>Function</keyword>
-			<keyword>FunctionEnd</keyword>
 			<keyword>GetCurInstType</keyword>
 			<keyword>GetCurrentAddress</keyword>
 			<keyword>GetDlgItem</keyword>
@@ -264,11 +262,14 @@
 			<keyword>LicenseForceSelection</keyword>
 			<keyword>LicenseLangString</keyword>
 			<keyword>LicenseText</keyword>
+			<keyword>LoadAndSetImage</keyword>
 			<keyword>LoadLanguageFile</keyword>
 			<keyword>LockWindow</keyword>
 			<keyword>LogSet</keyword>
 			<keyword>LogText</keyword>
 			<keyword>ManifestDPIAware</keyword>
+			<keyword>ManifestLongPathAware</keyword>
+			<keyword>ManifestMaxVersionTested</keyword>
 			<keyword>ManifestSupportedOS</keyword>
 			<keyword>MessageBox</keyword>
 			<keyword>MiscButtonText</keyword>
@@ -277,9 +278,9 @@
 			<keyword>OutFile</keyword>
 			<keyword>Page</keyword>
 			<keyword>PageCallbacks</keyword>
-			<keyword>PageEx</keyword>
-			<keyword>PageExEnd</keyword>
+			<keyword>PEAddResource</keyword>
 			<keyword>PEDllCharacteristics</keyword>
+			<keyword>PEAddResource</keyword>
 			<keyword>PESubsysVer</keyword>
 			<keyword>Pop</keyword>
 			<keyword>Push</keyword>
@@ -296,14 +297,10 @@
 			<keyword>Return</keyword>
 			<keyword>RMDir</keyword>
 			<keyword>SearchPath</keyword>
-			<keyword>Section</keyword>
-			<keyword>SectionEnd</keyword>
 			<keyword>SectionGetFlags</keyword>
 			<keyword>SectionGetInstTypes</keyword>
 			<keyword>SectionGetSize</keyword>
 			<keyword>SectionGetText</keyword>
-			<keyword>SectionGroup</keyword>
-			<keyword>SectionGroupEnd</keyword>
 			<keyword>SectionIn</keyword>
 			<keyword>SectionSetFlags</keyword>
 			<keyword>SectionSetInstTypes</keyword>
