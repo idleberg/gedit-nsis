@@ -48,7 +48,9 @@
 		</context>
 
 		<context id="variable" style-ref="variable">
-			<match>\$(\%{identifier}|\{\%{identifier}\}|\(\^\%{identifier}\))</match>
+			<match>\$(\%{identifier}
+			\{\%{identifier}\}
+			\(\^\%{identifier}\))</match>
 		</context>
 
 		<context id="variable-assignment">
@@ -113,7 +115,11 @@
 		</context>
 
 		<context id="escape" style-ref="escape">
-			<match>\$\\("|n|t|\$|r)</match>
+			<match>\$\\("
+			n
+			t
+			\$
+			r)</match>
 		</context>
 
 		<context id="builtins" style-ref="builtins">
@@ -226,6 +232,7 @@
 			<keyword>GetFullPathName</keyword>
 			<keyword>GetFunctionAddress</keyword>
 			<keyword>GetInstDirError</keyword>
+			<keyword>GetKnownFolderPath</keyword>
 			<keyword>GetLabelAddress</keyword>
 			<keyword>GetTempFileName</keyword>
 			<keyword>Goto</keyword>
@@ -235,6 +242,8 @@
 			<keyword>IfErrors</keyword>
 			<keyword>IfFileExists</keyword>
 			<keyword>IfRebootFlag</keyword>
+			<keyword>IfRtlLanguage</keyword>
+			<keyword>IfShellVarContextAll</keyword>
 			<keyword>IfSilent</keyword>
 			<keyword>InitPluginsDir</keyword>
 			<keyword>InstallButtonText</keyword>
@@ -280,7 +289,7 @@
 			<keyword>PageCallbacks</keyword>
 			<keyword>PEAddResource</keyword>
 			<keyword>PEDllCharacteristics</keyword>
-			<keyword>PEAddResource</keyword>
+			<keyword>PERemoveResource</keyword>
 			<keyword>PESubsysVer</keyword>
 			<keyword>Pop</keyword>
 			<keyword>Push</keyword>
