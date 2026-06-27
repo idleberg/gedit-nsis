@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-	Copyright (c) 2013-2018 Jan T. Sott
+	Copyright (c) 2013-2026 Jan T. Sott
 
-	This code is dual-licensed under the The MIT License and
-	The GNU Lesser General Public License, version 2.1
+	This code is licensed The MIT License
 
 	https://github.com/idleberg/gedit-nsis.lang
 -->
 <language id="nsis" _name="NSIS" version="2.0" _section="Others">
 	<metadata>
-		<property name="globs">*.nsi;*.nsh;*.bnsi;*.bnsh;*:nsdinc</property>
+		<property name="globs">*.nsi;*.nsh;*.bnsi;*.bnsh;*.nsdinc</property>
 		<property name="line-comment-start">;</property>
 	</metadata>
 
@@ -127,11 +126,18 @@
 			<keyword>addincludedir</keyword>
 			<keyword>addplugindir</keyword>
 			<keyword>appendfile</keyword>
+			<keyword>appendmemfile</keyword>
+			<keyword>assert</keyword>
 			<keyword>cd</keyword>
 			<keyword>define</keyword>
 			<keyword>delfile</keyword>
 			<keyword>echo</keyword>
 			<keyword>else</keyword>
+			<keyword>elseif</keyword>
+			<keyword>elseifdef</keyword>
+			<keyword>elseifmacrodef</keyword>
+			<keyword>elseifmacrondef</keyword>
+			<keyword>elseifndef</keyword>
 			<keyword>endif</keyword>
 			<keyword>error</keyword>
 			<keyword>execute</keyword>
@@ -147,6 +153,7 @@
 			<keyword>insertmacro</keyword>
 			<keyword>macro</keyword>
 			<keyword>macroend</keyword>
+			<keyword>macroundef</keyword>
 			<keyword>makensis</keyword>
 			<keyword>packhdr</keyword>
 			<keyword>pragma</keyword>
@@ -155,6 +162,7 @@
 			<keyword>system</keyword>
 			<keyword>tempfile</keyword>
 			<keyword>undef</keyword>
+			<keyword>uninstfinalize</keyword>
 			<keyword>verbose</keyword>
 			<keyword>warning</keyword>
 		</context>
@@ -179,6 +187,7 @@
 			<keyword>CompletedText</keyword>
 			<keyword>ComponentText</keyword>
 			<keyword>CopyFiles</keyword>
+			<keyword>CPU</keyword>
 			<keyword>CRCCheck</keyword>
 			<keyword>CreateDirectory</keyword>
 			<keyword>CreateFont</keyword>
@@ -211,16 +220,18 @@
 			<keyword>FileReadByte</keyword>
 			<keyword>FileReadUTF16LE</keyword>
 			<keyword>FileReadWord</keyword>
-			<keyword>FileWriteUTF16LE</keyword>
 			<keyword>FileSeek</keyword>
 			<keyword>FileWrite</keyword>
 			<keyword>FileWriteByte</keyword>
+			<keyword>FileWriteUTF16LE</keyword>
 			<keyword>FileWriteWord</keyword>
 			<keyword>FindClose</keyword>
 			<keyword>FindFirst</keyword>
 			<keyword>FindNext</keyword>
 			<keyword>FindWindow</keyword>
 			<keyword>FlushINI</keyword>
+			<keyword>Function</keyword>
+			<keyword>FunctionEnd</keyword>
 			<keyword>GetCurInstType</keyword>
 			<keyword>GetCurrentAddress</keyword>
 			<keyword>GetDlgItem</keyword>
@@ -234,11 +245,15 @@
 			<keyword>GetInstDirError</keyword>
 			<keyword>GetKnownFolderPath</keyword>
 			<keyword>GetLabelAddress</keyword>
+			<keyword>GetRegView</keyword>
+			<keyword>GetShellVarContext</keyword>
 			<keyword>GetTempFileName</keyword>
+			<keyword>GetWinVer</keyword>
 			<keyword>Goto</keyword>
 			<keyword>HideWindow</keyword>
 			<keyword>Icon</keyword>
 			<keyword>IfAbort</keyword>
+			<keyword>IfAltRegView</keyword>
 			<keyword>IfErrors</keyword>
 			<keyword>IfFileExists</keyword>
 			<keyword>IfRebootFlag</keyword>
@@ -276,7 +291,11 @@
 			<keyword>LockWindow</keyword>
 			<keyword>LogSet</keyword>
 			<keyword>LogText</keyword>
+			<keyword>ManifestAppendCustomString</keyword>
+			<keyword>ManifestDisableWindowFiltering</keyword>
 			<keyword>ManifestDPIAware</keyword>
+			<keyword>ManifestDPIAwareness</keyword>
+			<keyword>ManifestGdiScaling</keyword>
 			<keyword>ManifestLongPathAware</keyword>
 			<keyword>ManifestMaxVersionTested</keyword>
 			<keyword>ManifestSupportedOS</keyword>
@@ -287,6 +306,8 @@
 			<keyword>OutFile</keyword>
 			<keyword>Page</keyword>
 			<keyword>PageCallbacks</keyword>
+			<keyword>PageEx</keyword>
+			<keyword>PageExEnd</keyword>
 			<keyword>PEAddResource</keyword>
 			<keyword>PEDllCharacteristics</keyword>
 			<keyword>PERemoveResource</keyword>
@@ -296,6 +317,7 @@
 			<keyword>Quit</keyword>
 			<keyword>ReadEnvStr</keyword>
 			<keyword>ReadINIStr</keyword>
+			<keyword>ReadMemory</keyword>
 			<keyword>ReadRegDWORD</keyword>
 			<keyword>ReadRegStr</keyword>
 			<keyword>Reboot</keyword>
@@ -306,11 +328,16 @@
 			<keyword>Return</keyword>
 			<keyword>RMDir</keyword>
 			<keyword>SearchPath</keyword>
+			<keyword>Section</keyword>
+			<keyword>SectionEnd</keyword>
 			<keyword>SectionGetFlags</keyword>
 			<keyword>SectionGetInstTypes</keyword>
 			<keyword>SectionGetSize</keyword>
 			<keyword>SectionGetText</keyword>
+			<keyword>SectionGroup</keyword>
+			<keyword>SectionGroupEnd</keyword>
 			<keyword>SectionIn</keyword>
+			<keyword>SectionInstType</keyword>
 			<keyword>SectionSetFlags</keyword>
 			<keyword>SectionSetInstTypes</keyword>
 			<keyword>SectionSetSize</keyword>
@@ -319,6 +346,7 @@
 			<keyword>SetAutoClose</keyword>
 			<keyword>SetBrandingImage</keyword>
 			<keyword>SetCompress</keyword>
+			<keyword>SetCompressionLevel</keyword>
 			<keyword>SetCompressor</keyword>
 			<keyword>SetCompressorDictSize</keyword>
 			<keyword>SetCtlColors</keyword>
@@ -349,6 +377,7 @@
 			<keyword>StrCpy</keyword>
 			<keyword>StrLen</keyword>
 			<keyword>SubCaption</keyword>
+			<keyword>Target</keyword>
 			<keyword>Unicode</keyword>
 			<keyword>UninstallButtonText</keyword>
 			<keyword>UninstallCaption</keyword>
@@ -357,6 +386,7 @@
 			<keyword>UninstallText</keyword>
 			<keyword>UninstPage</keyword>
 			<keyword>UnRegDLL</keyword>
+			<keyword>UnsafeStrCpy</keyword>
 			<keyword>Var</keyword>
 			<keyword>VIAddVersionKey</keyword>
 			<keyword>VIFileVersion</keyword>
@@ -376,16 +406,15 @@
 		<context id="operator" style-ref="operator">
 			<keyword>admin</keyword>
 			<keyword>all</keyword>
+			<keyword>amd64-unicode</keyword>
 			<keyword>auto</keyword>
 			<keyword>both</keyword>
 			<keyword>bottom</keyword>
 			<keyword>bzip2</keyword>
-			<keyword>components</keyword>
+			<keyword>colored</keyword>
 			<keyword>components</keyword>
 			<keyword>current</keyword>
 			<keyword>custom</keyword>
-			<keyword>custom</keyword>
-			<keyword>directory</keyword>
 			<keyword>directory</keyword>
 			<keyword>false</keyword>
 			<keyword>force</keyword>
@@ -394,11 +423,9 @@
 			<keyword>ifdiff</keyword>
 			<keyword>ifnewer</keyword>
 			<keyword>instfiles</keyword>
-			<keyword>instfiles</keyword>
 			<keyword>lastused</keyword>
 			<keyword>leave</keyword>
 			<keyword>left</keyword>
-			<keyword>license</keyword>
 			<keyword>license</keyword>
 			<keyword>listonly</keyword>
 			<keyword>lzma</keyword>
@@ -408,20 +435,30 @@
 			<keyword>notset</keyword>
 			<keyword>off</keyword>
 			<keyword>on</keyword>
+			<keyword>open</keyword>
+			<keyword>print</keyword>
 			<keyword>right</keyword>
 			<keyword>show</keyword>
 			<keyword>silent</keyword>
 			<keyword>silentlog</keyword>
+			<keyword>smooth</keyword>
 			<keyword>textonly</keyword>
 			<keyword>top</keyword>
 			<keyword>true</keyword>
 			<keyword>try</keyword>
+			<keyword>un.components</keyword>
+			<keyword>un.custom</keyword>
+			<keyword>un.directory</keyword>
+			<keyword>un.instfiles</keyword>
+			<keyword>un.license</keyword>
 			<keyword>uninstConfirm</keyword>
 			<keyword>user</keyword>
 			<keyword>Win10</keyword>
 			<keyword>Win7</keyword>
 			<keyword>Win8</keyword>
 			<keyword>WinVista</keyword>
+			<keyword>x86-ansi</keyword>
+			<keyword>x86-unicode</keyword>
 			<keyword>zlib</keyword>
 		</context>
 
@@ -494,6 +531,7 @@
 			<keyword>SHCTX</keyword>
 			<keyword>SHELL_CONTEXT</keyword>
 			<keyword>SW_HIDE</keyword>
+			<keyword>SW_SHOW</keyword>
 			<keyword>SW_SHOWDEFAULT</keyword>
 			<keyword>SW_SHOWMAXIMIZED</keyword>
 			<keyword>SW_SHOWMINIMIZED</keyword>
