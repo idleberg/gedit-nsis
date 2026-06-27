@@ -6,22 +6,22 @@
 
 	https://github.com/idleberg/gedit-nsis.lang
 -->
-<language id="nsis" _name="NSIS" version="2.0" _section="Others">
+<language id="nsis" _name="NSIS" version="2.0" _section="Script">
 	<metadata>
 		<property name="globs">*.nsi;*.nsh;*.bnsi;*.bnsh;*.nsdinc</property>
 		<property name="line-comment-start">;</property>
 	</metadata>
 
 	<styles>
-		<style id="builtins" _name="Builtin" map-to="def:type"/>
+		<style id="builtins" _name="Builtin" map-to="def:preprocessor"/>
 		<style id="comment" _name="Comment" map-to="def:comment"/>
 		<style id="escape" _name="Escaped Character" map-to="def:special-char"/>
 		<style id="keyword" _name="Keyword" map-to="def:keyword"/>
 		<style id="operator" _name="Operator" map-to="def:operator"/>
-		<style id="plugin" _name="Plugin" map-to="def:keyword"/>
+		<style id="plugin" _name="Plugin" map-to="def:function"/>
 		<style id="string" _name="String" map-to="def:string"/>
-		<style id="symbol" _name="Symbol"  map-to="def:operator"/>
-		<style id="variable" _name="Variable" map-to="makefile:variable"/>
+		<style id="symbol" _name="Symbol" map-to="def:constant"/>
+		<style id="variable" _name="Variable" map-to="def:type"/>
 	</styles>
 
 	<definitions>
@@ -540,7 +540,7 @@
 			<keyword>TEMPORARY</keyword>
 		</context>
 
-		<context id="plugin" style-ref="keyword">
+		<context id="plugin" style-ref="plugin">
 			<match>\b(([A-Za-z0-9_]+)::([A-Za-z0-9_]+))\b</match>
 		</context>
 	</definitions>
