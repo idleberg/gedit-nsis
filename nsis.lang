@@ -21,6 +21,7 @@
 		<style id="plugin" _name="Plugin" map-to="def:function"/>
 		<style id="string" _name="String" map-to="def:string"/>
 		<style id="symbol" _name="Symbol" map-to="def:constant"/>
+		<style id="include-macro" _name="Include Macro" map-to="def:builtin"/>
 		<style id="variable" _name="Variable" map-to="def:type"/>
 	</styles>
 
@@ -32,6 +33,7 @@
 				<context ref="backtick-quoted-string"/>
 				<context ref="block-comment"/>
 				<context ref="builtins"/>
+				<context ref="include-macros"/>
 				<context ref="double-quoted-string"/>
 				<context ref="escape"/>
 				<context ref="keywords"/>
@@ -542,6 +544,10 @@
 
 		<context id="plugin" style-ref="plugin">
 			<match>\b(([A-Za-z0-9_]+)::([A-Za-z0-9_]+))\b</match>
+		</context>
+
+		<context id="include-macros" style-ref="include-macro">
+			<match>\$\{(BannerTrimPath|DirState|DriveSpace|GetBaseName|GetDrives|GetExeName|GetExePath|GetFileAttributes|GetFileExt|GetFileName|GetFileVersion|GetOptions|GetOptionsS|GetParameters|GetParent|GetRoot|GetSize|GetTime|Locate|RefreshShellIcons|AndIf|AndIfNot|AndUnless|Break|Case|CaseElse|Continue|Default|Do|DoUntil|DoWhile|Else|ElseIf|ElseIfNot|ElseUnless|EndIf|EndSelect|EndSwitch|ExitDo|ExitFor|ExitWhile|For|ForEach|If|IfCmd|IfNot|IfNotThen|IfThen|Loop|LoopUntil|LoopWhile|OrIf|OrIfNot|OrUnless|Select|Switch|Unless|While|MementoSection|MementoSectionDone|MementoSectionEnd|MementoSectionRestore|MementoSectionSave|MementoUnselectedSection|StrCase|StrClb|StrIOToNSIS|StrLoc|StrNSISToIO|StrRep|StrSort|StrStr|StrStrAdv|StrTok|StrTrimNewLines|ConfigRead|ConfigReadS|ConfigWrite|ConfigWriteS|FileJoin|FileReadFromEnd|FileRecode|LineFind|LineRead|LineSum|TextCompare|TextCompareS|TrimNewLines|AtLeastServicePack|AtLeastWin10|AtLeastWin11|AtLeastWin2000|AtLeastWin2003|AtLeastWin2008|AtLeastWin2008R2|AtLeastWin7|AtLeastWin8|AtLeastWin8\.1|AtLeastWin95|AtLeastWin98|AtLeastWinME|AtLeastWinNT4|AtLeastWinVista|AtLeastWinXP|AtMostServicePack|AtMostWin10|AtMostWin11|AtMostWin2000|AtMostWin2003|AtMostWin2008|AtMostWin2008R2|AtMostWin2012|AtMostWin2012R2|AtMostWin7|AtMostWin8|AtMostWin8\.1|AtMostWin95|AtMostWin98|AtMostWinME|AtMostWinNT4|AtMostWinVista|AtMostWinXP|IsDomainController|IsNT|IsServerOS|IsServicePack|IsWin10|IsWin11|IsWin2000|IsWin2003|IsWin2008|IsWin2008R2|IsWin2012|IsWin2012R2|IsWin7|IsWin8|IsWin8\.1|IsWin95|IsWin98|IsWinME|IsWinNT4|IsWinVista|IsWinXP|IsWow64|StrFilter|StrFilterS|VersionCompare|VersionConvert|WordAdd|WordAddS|WordFind|WordFind2X|WordFind2XS|WordFind3X|WordFind3XS|WordFindS|WordInsert|WordInsertS|WordReplace|WordReplaceS|DisableX64FSRedirection|EnableX64FSRedirection|RunningX64)\}</match>
 		</context>
 	</definitions>
 </language>
